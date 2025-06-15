@@ -1,9 +1,9 @@
 # Data Science
 ## 0. Introduction
 
-```
-Une entreprise parisienne a été victime d'une fuite de données sur un serveur accessible physiquement uniquement. 3 intrus ont mené une opération minutieuse tout au long de l'année. Pour ce faire, ils se sont chacun créé une fausse identité d'employé. Voici le log d'accès physique au bâtiment de l'entreprise, retrouvez les 3 identifiants suspects. PS : Il paraît que les identifiants des 3 intrus combinés forment une phrase cohérente...
-````
+
+> Une entreprise parisienne a été victime d'une fuite de données sur un serveur accessible physiquement uniquement. 3 intrus ont mené une opération minutieuse tout au long de l'année. Pour ce faire, ils se sont chacun créé une fausse identité d'employé. Voici le log d'accès physique au bâtiment de l'entreprise, retrouvez les 3 identifiants suspects. PS : Il paraît que les identifiants des 3 intrus combinés forment une phrase cohérente...
+
 
 We have a huge (408M !) csv called 'calendar.csv' that contains employee clock-in and clock-out data. The file has the following columns: `employee_id`, `type`, and `datetime`. The `type` column can either be 'in' or 'out', indicating whether the employee is clocking in or out.
 
@@ -20,7 +20,7 @@ At a quick glance, we see that the employees clock in between 8:45:00 and 9:15:5
 
 ## 1. Employee 1:
 
-#### Indice: La montre de cet employé doit être particulièrement rare...
+#### Hint: La montre de cet employé doit être particulièrement rare...
 ```py
 import pandas as pd
 
@@ -71,7 +71,7 @@ Flag: `AMSI{finding}`
 
 ## 2. Employee 2:
 
-#### Indice: Cet employé aurait bien besoin de se reposer !
+#### Hint: Cet employé aurait bien besoin de se reposer !
 
 
 This one took me a while, but I observed that friday and saturday we have a lot less employees working.
@@ -105,9 +105,9 @@ We check if someone worked every day where less than 5000 employees clocked in.
 Here we see that the employee `hidden` is the only one that worked every day with low attendance.
 Flag: `AMSI{hidden}`
 
-## 3. Employe 3 :
+## 3. Employe 3:
 
-#### Mais comment cet employé fait-il pour être à deux endroits à la fois...
+#### Hint: Mais comment cet employé fait-il pour être à deux endroits à la fois...
 To be honest, I did get this one when trying to solve the first one.
 It's quite easy we just have to find employees that do not clock in but only clock out.
 ```rust
